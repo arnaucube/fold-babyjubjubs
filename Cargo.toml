@@ -19,15 +19,9 @@ ark-std = "0.5.0"
 rand = "0.8.5"
 rand_core = {version = "0.6", default-features = false}
 
-# Note: for testing purposes we use the 'light-test' feature when importing
-# Sonobe's folding-schemes, but for a real-world usage it must be used without
-# this feature (but then the DeciderETH circuit is bigger and takes more time
-# to compute).
-folding-schemes = { git = "https://github.com/privacy-scaling-explorations/sonobe", package = "folding-schemes", features=["light-test"], rev="964f9b6de91283c2bf12ffdd7578125dc999104a"}
-# folding-schemes = { path = "../../sonobe/sonobe_FCIRCUIT-EXTINP/folding-schemes", package = "folding-schemes", features=["light-test"]}
+folding-schemes = { git = "https://github.com/privacy-scaling-explorations/sonobe", package = "folding-schemes", rev="c6f1a246e0705582a75de6becf4ad21f325fa5a1"}
 blake2 = "0.10"
-arkeddsa = { git = "https://github.com/arnaucube/arkeddsa", features=["r1cs"], rev="67c077e0e564d5f8d193a44f67357dfd1180cb64"}
-# arkeddsa = { path = "../arkeddsa_TE-to-C", features=["r1cs"]}
+arkeddsa = { git = "https://github.com/arnaucube/arkeddsa", features=["r1cs"], rev="0a9ea7ac1df07363af0fda723e313e775563b9f4"}
 
 
 

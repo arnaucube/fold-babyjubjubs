@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
-    use ark_bn254::{constraints::GVar, Fr, G1Projective as G1};
-    use ark_grumpkin::{constraints::GVar as GVar2, Projective as G2};
+    use ark_bn254::{Fr, G1Projective as G1};
+    use ark_grumpkin::Projective as G2;
     use std::time::Instant;
 
     use arkeddsa::ed_on_bn254_twist::{constraints::EdwardsVar, EdwardsProjective};
@@ -44,8 +44,7 @@ mod tests {
 
         // define type aliases for the FoldingScheme (FS) and Decider (D), to avoid writting the
         // whole type each time
-        pub type FS<const S: usize> =
-            Nova<G1, GVar, G2, GVar2, FC<S>, Pedersen<G1>, Pedersen<G2>, false>;
+        pub type FS<const S: usize> = Nova<G1, G2, FC<S>, Pedersen<G1>, Pedersen<G2>, false>;
 
         // prepare the Nova prover & verifier params
         let nova_preprocess_params =
